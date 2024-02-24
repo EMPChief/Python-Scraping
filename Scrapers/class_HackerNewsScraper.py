@@ -13,17 +13,17 @@ class HackerNewsScraper:
         return sorted(hn_list, key=lambda k: k['points'], reverse=True)
 
     def scrape_hn_page(self, url):
-        res = self.scraper.get(url)
-        if not res.ok:
+        response = self.scraper.get(url)
+        if not response.ok:
             return []
 
-        soup = BeautifulSoup(res.text, 'html.parser')
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-        links = soup.select('.titleline')
+        story_links = soup.select('.titleline')
         votes = soup.select('.score')
 
         hn_list = []
-        for idx, link in enumerate(links):
+        for idx, link in enumerate(story_links):
             try:
                 title = link.get_text()
                 href = link.find('a').get('href', None)
@@ -42,8 +42,17 @@ class HackerNewsScraper:
                 print(f"Error parsing points for item at index {idx}")
 
         return hn_list
+    
+    def headers(self):
+        return {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0",
+            "Referer": "https://www.google.com/",
+            "Accept": "*/*",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Pragma": "no-cache",
+            }
 
-    def create_custom_news_df(self, pages=1):
+    def create_custom_news_list(self, pages=1):
         hn_full_list = []
         url = self.base_url
 
@@ -52,11 +61,11 @@ class HackerNewsScraper:
             hn_list = self.scrape_hn_page(url)
             hn_full_list.extend(hn_list)
 
-            res = self.scraper.get(url)
-            if not res.ok:
+            response = self.scraper.get(url, headers=self.headers())
+            if not response.ok:
                 break
 
-            soup = BeautifulSoup(res.text, 'html.parser')
+            soup = BeautifulSoup(response.text, 'html.parser')
             more_link = soup.select('.morelink')
             if more_link:
                 more_href = more_link[0].get('href')
@@ -73,14 +82,14 @@ class HackerNewsScraper:
 
         return hn_full_list
 
-    def create_custom_news_df_as_dataframe(self, pages=1):
-        hn_list = self.create_custom_news_df(pages)
+    def create_custom_news_df(self, pages=1):
+        hn_list = self.create_custom_news_list(pages)
         df = pd.DataFrame(hn_list)
         return df
 
 
 if __name__ == "__main__":
     hacker_news = HackerNewsScraper()
-    hn_data = hacker_news.create_custom_news_df_as_dataframe(7)
-    hn_data.to_csv('hn_data.csv', index=False)
+    hn_data = hacker_news.create_custom_news_df(20)
+    hn_data.to_csv('data/hn_scraper_data.csv', index=False)
     print(hn_data)
