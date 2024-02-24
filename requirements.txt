@@ -1,2 +1,4 @@
 pytube
 tqdm
+beautifulsoup4
+requests
