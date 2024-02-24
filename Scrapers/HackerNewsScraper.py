@@ -15,11 +15,10 @@ class HackerNewsScraper:
     def scrape_hn_page(self, url):
         res = self.scraper.get(url)
         if not res.ok:
-            return []  # Return an empty list if the request fails
+            return []
 
         soup = BeautifulSoup(res.text, 'html.parser')
 
-        # Find elements with the 'titleline' class
         links = soup.select('.titleline')
         votes = soup.select('.score')
 
