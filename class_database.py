@@ -46,12 +46,10 @@ class Database:
         self.cursor.execute(
             f"UPDATE {self.tb} SET {new_data} WHERE {condition}")
         self.connection.commit()
-        return data
     
     def delete_data(self, condition):
         self.cursor.execute(f"DELETE FROM {self.tb} WHERE {condition}")
         self.connection.commit()
-        return data
     
     def drop_table(self):
         self.cursor.execute(f"DROP TABLE {self.tb}")
@@ -68,19 +66,13 @@ db.create_table(columns)
 
 new_rows = [
     ('2024-02-25 17:19:59', 'The Rolling Stones', 'The Forum', '1975.07.11'),
-    ('2024-02-25 17:19:59', 'The Rolling Stones',
-     'Madison Square Garden', '1969.11.28'),
-    ('2024-02-25 17:19:59', 'The Rolling Stones', 'The Forum', '1975.07.11'),
-    ('2024-02-25 18:30:00', 'Pink Floyd', 'Earls Court Exhibition Centre', '1980.08.09'),
-    ('2024-02-25 18:30:00', 'Pink Floyd', 'Pompeii Amphitheatre', '1971.10.04'),
-    ('2024-02-25 18:30:00', 'Led Zeppelin', 'Madison Square Garden', '1973.07.27'),
-    ('2024-02-25 18:30:00', 'Queen', 'Wembley Stadium', '1986.07.12'),
-    ('2024-02-25 18:30:00', 'AC/DC', 'River Plate Stadium', '2009.12.04'),
-    ('2024-02-25 18:30:00', 'The Beatles', 'The Ed Sullivan Show', '1964.02.09')
+    ('2024-02-25 17:20:00', 'The Rolling Stones', 'The Forum', '1975.07.11'),
 ]
-
-
 db.insert_many_rows(new_rows)
+
+db.delete_data("city='The Forum'")
+
+
 
 data = db.select_all_data()
 print(data)
