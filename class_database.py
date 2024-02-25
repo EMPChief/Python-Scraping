@@ -41,7 +41,21 @@ class Database:
         self.cursor.execute(f"SELECT * FROM {self.tb} WHERE {condition}")
         data = self.cursor.fetchone()
         return data
-        
+    
+    def update_data(self, condition, new_data):
+        self.cursor.execute(
+            f"UPDATE {self.tb} SET {new_data} WHERE {condition}")
+        self.connection.commit()
+        return data
+    
+    def delete_data(self, condition):
+        self.cursor.execute(f"DELETE FROM {self.tb} WHERE {condition}")
+        self.connection.commit()
+        return data
+    
+    def drop_table(self):
+        self.cursor.execute(f"DROP TABLE {self.tb}")
+        self.connection.commit()
 
     def close_connection(self):
         self.connection.close()
