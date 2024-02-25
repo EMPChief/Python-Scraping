@@ -3,3 +3,5 @@ tqdm
 beautifulsoup4
 requests
 cloudscraper
+selectorlib
+python-dotenv
