@@ -1,7 +1,7 @@
 import sqlite3
 
 
-class Database:
+class My_Database:
     def __init__(self, db_name=None, tb=None):
         self.connection = sqlite3.connect(db_name)
         self.cursor = self.connection.cursor()
@@ -61,7 +61,7 @@ class Database:
 
 if __name__ == '__main__':
     columns = ['id INTEGER PRIMARY KEY', 'band TEXT', 'venue TEXT', 'date TEXT']
-    db = Database(db_name='database.db', tb='tourevent')
+    db = My_Database(db_name='database.db', tb='tourevent')
     db.create_table(columns)
     new_rows = [
         ('2024-02-25 17:19:59', 'The Rolling Stones', 'The Forum', '1975.07.11'),
