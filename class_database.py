@@ -59,22 +59,16 @@ class Database:
         self.connection.close()
 
 
-columns = ['id INTEGER PRIMARY KEY', 'band TEXT', 'venue TEXT', 'date TEXT']
-
-db = Database(db_name='database.db', tb='tourevent')
-db.create_table(columns)
-
-new_rows = [
-    ('2024-02-25 17:19:59', 'The Rolling Stones', 'The Forum', '1975.07.11'),
-    ('2024-02-25 17:20:00', 'The Rolling Stones', 'The Forum', '1975.07.11'),
-]
-db.insert_many_rows(new_rows)
-
-db.delete_data("city='The Forum'")
-
-
-
-data = db.select_all_data()
-print(data)
-
-db.close_connection()
+if __name__ == '__main__':
+    columns = ['id INTEGER PRIMARY KEY', 'band TEXT', 'venue TEXT', 'date TEXT']
+    db = Database(db_name='database.db', tb='tourevent')
+    db.create_table(columns)
+    new_rows = [
+        ('2024-02-25 17:19:59', 'The Rolling Stones', 'The Forum', '1975.07.11'),
+        ('2024-02-25 17:20:00', 'The Rolling Stones', 'The Forum', '1975.07.11'),
+    ]
+    db.insert_many_rows(new_rows)
+    db.delete_data("city='The Forum'")
+    data = db.select_all_data()
+    print(data)
+    db.close_connection()
