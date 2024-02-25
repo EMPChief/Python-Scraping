@@ -36,6 +36,12 @@ class Database:
         self.cursor.execute(f"SELECT * FROM {self.tb}")
         data = self.cursor.fetchall()
         return data
+    
+    def select_one_data(self, condition):
+        self.cursor.execute(f"SELECT * FROM {self.tb} WHERE {condition}")
+        data = self.cursor.fetchone()
+        return data
+        
 
     def close_connection(self):
         self.connection.close()
