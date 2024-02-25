@@ -41,7 +41,6 @@ class Database:
         self.connection.close()
 
 
-# Define table columns
 columns = ['id INTEGER PRIMARY KEY', 'band TEXT', 'venue TEXT', 'date TEXT']
 
 db = Database(db_name='database.db', tb='tourevent')
