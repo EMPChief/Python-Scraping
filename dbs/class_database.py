@@ -12,8 +12,8 @@ class My_Database:
         self.cursor.execute(
             f"CREATE TABLE IF NOT EXISTS {self.tb} ({columns_str})")
 
-    def insert_many_rows(self, rows):
-        placeholders = ','.join(['?']*len(rows[0]))
+    def insert_many_rows(self, rows, columns):
+        placeholders = ','.join(['?']*len(columns))
         existing_rows = self.select_all_data()
 
         filtered_rows = [row for row in rows if row not in existing_rows]
@@ -36,21 +36,21 @@ class My_Database:
         self.cursor.execute(f"SELECT * FROM {self.tb}")
         data = self.cursor.fetchall()
         return data
-    
+
     def select_one_data(self, condition):
         self.cursor.execute(f"SELECT * FROM {self.tb} WHERE {condition}")
         data = self.cursor.fetchone()
         return data
-    
+
     def update_data(self, condition, new_data):
         self.cursor.execute(
             f"UPDATE {self.tb} SET {new_data} WHERE {condition}")
         self.connection.commit()
-    
+
     def delete_data(self, condition):
         self.cursor.execute(f"DELETE FROM {self.tb} WHERE {condition}")
         self.connection.commit()
-    
+
     def drop_table(self):
         self.cursor.execute(f"DROP TABLE {self.tb}")
         self.connection.commit()
@@ -60,7 +60,7 @@ class My_Database:
 
 
 if __name__ == '__main__':
-    columns = ['id INTEGER PRIMARY KEY', 'band TEXT', 'venue TEXT', 'date TEXT']
+    columns = ['id INTEGER PRIMARY KEY', 'band TEXT', 'city TEXT', 'date TEXT']
     db = My_Database(db_name='database.db', tb='tourevent')
     db.create_table(columns)
     new_rows = [
