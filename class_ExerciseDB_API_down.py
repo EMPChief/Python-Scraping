@@ -9,7 +9,7 @@ load_dotenv()
 class ExerciseDownloader:
     def __init__(self, api_key):
         self.url = "https://exercisedb.p.rapidapi.com/exercises"
-        self.querystring = {"limit": "1000"}
+        self.querystring = {"limit": "2000"}
         self.headers = {
             "X-RapidAPI-Key": api_key,
             "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
@@ -34,7 +34,9 @@ class ExerciseDownloader:
                     gif_url = exercise.get('gifUrl')
                     if gif_url:
                         exercise_exists = any(
-                            ex['name'] == exercise['name'] and ex['instructions'] == exercise['instructions']
+                            ex['name'] == exercise['name'] and
+                            ex['instructions'] == exercise['instructions'] and
+                            ex['bodyPart'] == exercise['bodyPart']
                             for ex in existing_exercises
                         )
 
@@ -61,7 +63,6 @@ class ExerciseDownloader:
                             else:
                                 print(f"Failed to download GIF for exercise: {exercise['name']}")
 
-                            # Limit requests to prevent overloading the server
                             if index < len(data) - 1:
                                 print("Waiting 3 seconds before next download...")
                                 time.sleep(3)

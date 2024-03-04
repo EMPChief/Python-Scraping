@@ -18705,5 +18705,205 @@
             "Repeat for the desired number of repetitions."
         ],
         "gifPath": "gif/0609.gif"
+    },
+    {
+        "name": "45° side bend",
+        "bodyPart": "waist",
+        "equipment": "body weight",
+        "target": "abs",
+        "secondaryMuscles": [
+            "obliques"
+        ],
+        "instructions": [
+            "Stand with your feet shoulder-width apart and your arms extended straight down by your sides.",
+            "Keeping your back straight and your core engaged, slowly bend your torso to one side, lowering your hand towards your knee.",
+            "Pause for a moment at the bottom, then slowly return to the starting position.",
+            "Repeat on the other side.",
+            "Continue alternating sides for the desired number of repetitions."
+        ],
+        "gifPath": "gif/0002.gif"
+    },
+    {
+        "name": "low glute bridge on floor",
+        "bodyPart": "upper legs",
+        "equipment": "body weight",
+        "target": "glutes",
+        "secondaryMuscles": [
+            "hamstrings",
+            "core"
+        ],
+        "instructions": [
+            "Lie flat on your back with your knees bent and feet flat on the ground.",
+            "Place your arms by your sides, palms facing down.",
+            "Engage your glutes and core, then lift your hips off the ground until your body forms a straight line from your knees to your shoulders.",
+            "Pause for a moment at the top, squeezing your glutes.",
+            "Slowly lower your hips back down to the starting position.",
+            "Repeat for the desired number of repetitions."
+        ],
+        "gifPath": "gif/3013.gif"
+    },
+    {
+        "name": "lower back curl",
+        "bodyPart": "back",
+        "equipment": "body weight",
+        "target": "spine",
+        "secondaryMuscles": [
+            "glutes",
+            "hamstrings"
+        ],
+        "instructions": [
+            "Lie flat on your stomach with your legs extended and your arms by your sides.",
+            "Engage your glutes and hamstrings, and slowly lift your upper body off the ground, curling your back upwards.",
+            "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+            "Repeat for the desired number of repetitions."
+        ],
+        "gifPath": "gif/1352.gif"
+    },
+    {
+        "name": "lunge with jump",
+        "bodyPart": "upper legs",
+        "equipment": "body weight",
+        "target": "glutes",
+        "secondaryMuscles": [
+            "quadriceps",
+            "hamstrings",
+            "calves"
+        ],
+        "instructions": [
+            "Start by standing with your feet shoulder-width apart.",
+            "Take a step forward with your right foot, lowering your body into a lunge position.",
+            "Push off with your right foot and jump into the air, switching the position of your feet mid-air.",
+            "Land softly with your left foot forward and immediately lower your body into a lunge position.",
+            "Continue alternating between lunges and jumps for the desired number of repetitions."
+        ],
+        "gifPath": "gif/3582.gif"
+    },
+    {
+        "name": "lunge with twist",
+        "bodyPart": "waist",
+        "equipment": "body weight",
+        "target": "abs",
+        "secondaryMuscles": [
+            "quadriceps",
+            "glutes",
+            "hamstrings"
+        ],
+        "instructions": [
+            "Start by standing with your feet shoulder-width apart.",
+            "Take a step forward with your right foot, lowering your body into a lunge position.",
+            "As you lunge, twist your torso to the right, bringing your left elbow towards your right knee.",
+            "Pause for a moment, then return to the starting position.",
+            "Repeat on the other side, stepping forward with your left foot and twisting your torso to the left.",
+            "Continue alternating sides for the desired number of repetitions."
+        ],
+        "gifPath": "gif/1688.gif"
+    },
+    {
+        "name": "lying (side) quads stretch",
+        "bodyPart": "upper legs",
+        "equipment": "body weight",
+        "target": "quads",
+        "secondaryMuscles": [
+            "hamstrings"
+        ],
+        "instructions": [
+            "Lie on your side with your legs straight.",
+            "Bend your top leg and grab your ankle or foot with your hand.",
+            "Gently pull your ankle or foot towards your glutes until you feel a stretch in your quads.",
+            "Hold the stretch for 20-30 seconds.",
+            "Release the stretch and repeat on the other side."
+        ],
+        "gifPath": "gif/0613.gif"
+    },
+    {
+        "name": "lying elbow to knee",
+        "bodyPart": "waist",
+        "equipment": "body weight",
+        "target": "abs",
+        "secondaryMuscles": [
+            "hip flexors",
+            "lower back"
+        ],
+        "instructions": [
+            "Lie flat on your back with your knees bent and feet flat on the ground.",
+            "Place your hands behind your head with your elbows pointing outwards.",
+            "Engage your abs and lift your upper body off the ground, bringing your right elbow towards your left knee.",
+            "At the same time, extend your right leg straight out and lift it off the ground.",
+            "Pause for a moment, then return to the starting position.",
+            "Repeat the movement, this time bringing your left elbow towards your right knee and extending your left leg.",
+            "Continue alternating sides for the desired number of repetitions."
+        ],
+        "gifPath": "gif/2312.gif"
+    },
+    {
+        "name": "lying leg raise flat bench",
+        "bodyPart": "waist",
+        "equipment": "body weight",
+        "target": "abs",
+        "secondaryMuscles": [
+            "hip flexors"
+        ],
+        "instructions": [
+            "Lie flat on a flat bench with your back pressed against it.",
+            "Place your hands under your glutes for support.",
+            "Keep your legs straight and together, and lift them up towards the ceiling.",
+            "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+            "Repeat for the desired number of repetitions."
+        ],
+        "gifPath": "gif/0620.gif"
+    },
+    {
+        "name": "lying leg-hip raise",
+        "bodyPart": "waist",
+        "equipment": "body weight",
+        "target": "abs",
+        "secondaryMuscles": [
+            "hip flexors"
+        ],
+        "instructions": [
+            "Lie flat on your back with your legs extended and your arms by your sides.",
+            "Place your hands under your glutes for support.",
+            "Engage your core and lift your legs off the ground, raising them towards the ceiling.",
+            "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+            "Repeat for the desired number of repetitions."
+        ],
+        "gifPath": "gif/0865.gif"
+    },
+    {
+        "name": "machine inner chest press",
+        "bodyPart": "chest",
+        "equipment": "leverage machine",
+        "target": "pectorals",
+        "secondaryMuscles": [
+            "triceps",
+            "shoulders"
+        ],
+        "instructions": [
+            "Adjust the seat height and position yourself on the machine with your back flat against the pad.",
+            "Grasp the handles with an overhand grip and position your elbows at a 90-degree angle.",
+            "Push the handles forward until your arms are fully extended, exhaling during the movement.",
+            "Pause for a moment at the end of the movement, then slowly return to the starting position, inhaling as you do so.",
+            "Repeat for the desired number of repetitions."
+        ],
+        "gifPath": "gif/1301.gif"
+    },
+    {
+        "name": "march sit (wall)",
+        "bodyPart": "upper legs",
+        "equipment": "body weight",
+        "target": "glutes",
+        "secondaryMuscles": [
+            "quadriceps",
+            "hamstrings",
+            "calves"
+        ],
+        "instructions": [
+            "Stand with your back against a wall and your feet hip-width apart.",
+            "Slowly slide your back down the wall until your knees are bent at a 90-degree angle.",
+            "Lift your right foot off the ground and bring your knee towards your chest.",
+            "Lower your right foot back down and lift your left foot off the ground, bringing your knee towards your chest.",
+            "Continue alternating between lifting your right and left foot for the desired number of repetitions."
+        ],
+        "gifPath": "gif/0624.gif"
     }
 ]
