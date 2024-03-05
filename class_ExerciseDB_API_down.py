@@ -67,6 +67,7 @@ class ExerciseDownloader:
                                 print("Waiting 3 seconds before next download...")
                                 time.sleep(3)
 
+
                 existing_exercises.extend(exercises_with_gifs)
 
                 with open('exercises_with_gifs.json', 'w') as f:

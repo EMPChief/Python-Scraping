@@ -17,3 +17,4 @@ CMakeLists.txt.user
 .pyc
 /venv
 /.venv
+.env
