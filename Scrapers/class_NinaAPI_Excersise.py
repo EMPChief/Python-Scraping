@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class ExerciseFetcher:
     def __init__(self, api_key):
         self.api_key = api_key
@@ -39,7 +40,8 @@ class ExerciseFetcher:
                 self.all_exercises.extend(exercises)
                 print(f"Exercises for {muscle} fetched successfully.")
             else:
-                print(f"Failed to fetch exercises for {muscle}. Status Code: {response.status_code}")
+                print(f"Failed to fetch exercises for {
+                      muscle}. Status Code: {response.status_code}")
 
     def save_to_file(self, filename):
         with open(filename, "w") as f:

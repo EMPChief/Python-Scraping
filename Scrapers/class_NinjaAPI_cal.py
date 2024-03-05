@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class CaloriesBurnedFetcher:
     def __init__(self, api_key):
         self.api_key = api_key
@@ -32,14 +33,17 @@ class CaloriesBurnedFetcher:
             if response.status_code == 200:
                 data = response.json()
                 self.calories_data[activity] = data
-                print(f"Calories burned data for {activity} fetched successfully.")
+                print(f"Calories burned data for {
+                      activity} fetched successfully.")
             else:
-                print(f"Failed to fetch calories burned data for {activity}. Status Code: {response.status_code}")
+                print(f"Failed to fetch calories burned data for {
+                      activity}. Status Code: {response.status_code}")
 
     def save_to_file(self, filename):
         with open(filename, "w") as f:
             json.dump(self.calories_data, f, indent=4)
         print(f"All calories burned data saved to {filename}")
+
 
 # Usage
 api_key = os.getenv("NINJA_API_KEY")

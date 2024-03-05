@@ -3,6 +3,7 @@ import os
 import random
 import string
 
+
 class GifRenamer:
     def __init__(self, filepath_js="exercises_with_gifs.json", folderpath_gif="gif/"):
         self.filepath_js = filepath_js
@@ -24,7 +25,8 @@ class GifRenamer:
 
             random_numbers = ''.join(random.choices(string.digits, k=4))
 
-            new_filename = f"{exercise_name.replace(' ', '_')}_{random_numbers}.gif"
+            new_filename = f"{exercise_name.replace(' ', '_')}_{
+                random_numbers}.gif"
 
             old_filepath = os.path.join(self.folderpath_gif, old_filename)
             new_filepath = os.path.join(self.folderpath_gif, new_filename)
@@ -37,6 +39,7 @@ class GifRenamer:
                     pass
 
         self.save_data()
+
 
 gif_renamer = GifRenamer()
 gif_renamer.load_data()

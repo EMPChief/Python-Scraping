@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class ExerciseDownloader:
     def __init__(self, api_key):
         self.url = "https://exercisedb.p.rapidapi.com/exercises"
@@ -14,10 +15,11 @@ class ExerciseDownloader:
             "X-RapidAPI-Key": api_key,
             "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
         }
-    
+
     def download_exercises(self):
         try:
-            response = requests.get(self.url, headers=self.headers, params=self.querystring)
+            response = requests.get(
+                self.url, headers=self.headers, params=self.querystring)
             if response.status_code == 200:
                 data = response.json()
                 if not os.path.exists('gif'):
@@ -41,7 +43,8 @@ class ExerciseDownloader:
                         )
 
                         if exercise_exists:
-                            print(f"Skipping: {exercise['name']} - Exercise already exists")
+                            print(f"Skipping: {
+                                  exercise['name']} - Exercise already exists")
                         else:
                             filename = f"gif/{exercise['id']}.gif"
                             gif_response = requests.get(gif_url)
@@ -61,23 +64,25 @@ class ExerciseDownloader:
                                 }
                                 exercises_with_gifs.append(exercise_with_gif)
                             else:
-                                print(f"Failed to download GIF for exercise: {exercise['name']}")
+                                print(f"Failed to download GIF for exercise: {
+                                      exercise['name']}")
 
                             if index < len(data) - 1:
                                 print("Waiting 3 seconds before next download...")
                                 time.sleep(3)
-
 
                 existing_exercises.extend(exercises_with_gifs)
 
                 with open('exercises_with_gifs.json', 'w') as f:
                     json.dump(existing_exercises, f, indent=4)
 
-                print("Data with GIF links and local paths saved to exercises_with_gifs.json")
+                print(
+                    "Data with GIF links and local paths saved to exercises_with_gifs.json")
             else:
                 print("Failed to fetch data from the API")
         except Exception as e:
             print(f"An error occurred: {str(e)}")
+
 
 # Usage
 api_key = os.getenv('api_key_rapid_exercise')
