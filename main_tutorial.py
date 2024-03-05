@@ -1,4 +1,4 @@
-from Scrapers import TourScraper
+from Classes import TourScraper
 from dbs import My_Database
 import pandas as pd
 import time

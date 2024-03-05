@@ -1,4 +1,4 @@
-from Scrapers import HackerNewsScraper
+from Classes import HackerNewsScraper
 from dbs import My_Database
 import pandas as pd
 import time
